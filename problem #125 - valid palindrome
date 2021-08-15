@@ -1,0 +1,4 @@
+def isPalindrome(self, strs: str) -> bool:
+        strs = strs.lower()       
+        strs = [x for x in strs if (96 < ord(x) <123 or 47 < ord(x) <58) ]        
+        return strs == strs[::-1]
