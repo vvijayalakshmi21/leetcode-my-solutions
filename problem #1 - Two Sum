@@ -1,0 +1,11 @@
+def twoSum(self, nums: List[int], target: int) -> List[int]:
+        dict_op={}
+        result=[]
+        for index,val in enumerate(nums):
+            difference = target - val
+            if difference in dict_op:
+                result.append(index)
+                result.append(dict_op[difference])
+                return result
+            else:
+                dict_op[val]=index
