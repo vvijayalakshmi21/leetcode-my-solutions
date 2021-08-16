@@ -1,0 +1,4 @@
+def plusOne(self, digits: List[int]) -> List[int]:
+        digit = int(''.join(map(str, digits)))
+        digit += 1
+        return list(str(digit))
