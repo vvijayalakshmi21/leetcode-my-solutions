@@ -1,0 +1,17 @@
+def longestCommonPrefix(self, strs: List[str]) -> str:
+        if len(strs) == 0 or strs is None:
+            return ''
+        shortest_string = sorted(strs)[0]
+        prefix = ''
+        i = 0
+        for char in shortest_string:  
+            char_match = True
+            for string in strs:
+                if string[i] != char:
+                    char_match = False
+            if char_match:
+                prefix += char
+            else:
+                break
+            i+=1
+        return prefix
