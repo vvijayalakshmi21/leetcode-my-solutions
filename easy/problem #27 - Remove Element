@@ -1,0 +1,13 @@
+ def removeElement(self, nums: List[int], val: int) -> int:        
+        str_len = len(nums)
+        if str_len == 0:
+            return None        
+        i = 0
+        while(i < str_len):
+            curr_val = nums[i]
+            if curr_val == val:
+                nums.remove(curr_val)
+                str_len -= 1
+                i -= 1
+            i += 1
+        return len(nums)
