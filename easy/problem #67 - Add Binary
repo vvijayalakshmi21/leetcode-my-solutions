@@ -1,0 +1,47 @@
+def addBinary(self, a: str, b: str) -> str:
+        str_a_len = len(a)
+        str_b_len = len(b)
+        max_len = max(str_a_len, str_b_len)
+        carry = ''
+        result = ''
+        if(str_a_len < max_len):
+            for i in range(max_len - str_a_len):
+                a = '0' + a
+        elif (str_b_len < max_len):
+            for i in range(max_len - str_b_len):
+                b = '0' + b
+        i = 0
+        a = a[::-1]
+        b = b[::-1]
+        print('a:', a, 'b:', b)
+        while(i<max_len):               
+            if a[i] == '0' and b[i] == '0' and carry == '':
+                result = '0' + result
+                carry = ''
+            elif a[i] == '0' and b[i] == '0' and carry == '1':
+                result = '1' + result
+                carry = ''  
+            elif a[i] == '0' and b[i] == '1' and carry == '':
+                result = '1' + result
+                carry = ''
+            elif a[i] == '0' and b[i] == '1' and carry == '1':
+                result = '0' + result
+                carry = '1'
+            elif a[i] == '1' and b[i] == '0' and carry == '':
+                result = '1' + result
+                carry = ''
+            elif a[i] == '1' and b[i] == '0' and carry == '1':
+                result = '0' + result
+                carry = '1'
+            elif a[i] == '1' and b[i] == '1' and carry == '':
+                result = '0' + result
+                carry = '1'
+            elif a[i] == '1' and b[i] == '1' and carry == '1':
+                result = '1' + result
+                carry = '1'          
+            i += 1    
+                
+        if carry == '1':
+            result =  '1' + result
+       
+        return result
