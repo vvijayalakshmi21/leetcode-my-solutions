@@ -1,0 +1,11 @@
+def maxProfit(self, prices: List[int]) -> int:                
+        if len(prices) == 1:
+            return 0
+        min = float('inf')
+        profit = 0
+        for price in prices:
+            if price < min: 
+                min = price
+            if price - min > profit:
+                profit = price - min
+        return profit 
