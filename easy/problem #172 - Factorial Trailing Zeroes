@@ -1,0 +1,15 @@
+def trailingZeroes(self, n: int) -> int:
+        if(n < 5):
+            return 0
+        if(5 <= n <= 9):
+            return 1
+        stop = False
+        count = 0
+        while(not stop):
+            result = n//5
+            count += result
+            n = result
+            if result < 5:
+                stop = True
+                
+        return count
