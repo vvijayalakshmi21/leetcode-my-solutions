@@ -1,0 +1,18 @@
+def searchInsert(self, nums: List[int], target: int) -> int:
+        if target <= nums[0] :
+            return 0
+        str_len = len(nums)
+        try:
+            if nums.index(target) >=0:
+                return nums.index(target)
+        except:
+            if target > nums[str_len//2]:
+                for i in range(str_len//2, str_len):
+                    if target < nums[i]:
+                        return i  
+                return str_len
+            else:
+                for i in range(0, str_len//2):
+                    if target < nums[i]:
+                        return i 
+                return str_len//2
